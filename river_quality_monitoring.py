@@ -45,9 +45,6 @@ reading_log = []
 
 
 def classify_wqi(wqi):
-    """
-    Convert a WQI value into its class and pollution status.
-    """
 
     if wqi > 92.7:
         return "Class I - Clean"
@@ -95,9 +92,6 @@ def classify_all_stations(show_message=True):
 
 
 def get_valid_station_name(prompt="Enter station name: "):
-    """
-    Get a non-empty station name.
-    """
 
     while True:
         station_name = input(prompt).strip()
@@ -145,9 +139,6 @@ def get_valid_wqi(prompt="Enter WQI value (0-100): "):
 # ============================================================
 
 def display_stations():
-    """
-    Display all monitoring stations in a formatted table.
-    """
 
     if not river_stations:
         print("\nNo river stations are available.")
@@ -176,9 +167,6 @@ def display_stations():
 
 
 def add_or_update_station():
-    """
-    Add a new station or update an existing station.
-    """
 
     print("\n===== Add / Update River Station =====")
 
@@ -215,9 +203,6 @@ def add_or_update_station():
 # ============================================================
 
 def log_monitoring_reading():
-    """
-    Log a monitoring reading for an existing station.
-    """
 
     print("\n===== Log Monitoring Reading =====")
 
@@ -274,9 +259,6 @@ def log_monitoring_reading():
 
 
 def check_alerts():
-    """
-    Print alerts for rivers with WQI below 51.9.
-    """
 
     print("\n===== River Quality Alerts =====")
 
@@ -379,9 +361,6 @@ class RiverStation:
         self.wqi = wqi
 
     def determine_class(self):
-        """
-        Determine and return the correct WQI classification.
-        """
 
         return classify_wqi(self.wqi)
 
@@ -442,10 +421,6 @@ def demonstrate_river_station_class():
 # ============================================================
 
 def calculate_average_wqi_by_state():
-    """
-    Group stations by state and calculate average WQI.
-    Results are sorted from highest to lowest.
-    """
 
     print("\n===== Average WQI by State =====")
 
